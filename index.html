@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Memories</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ПЕРВАЯ СТРАНИЦА
+    ========================== -->
+
+    <section id="welcomeScreen" class="welcome-screen">
+
+        <button class="welcome-button" onclick="openMenu()">
+            WELCOME
+            <span>→</span>
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         ГЛАВНОЕ МЕНЮ
+    ========================== -->
+
+    <section id="menuScreen" class="menu-screen">
+
+        <div class="menu-container">
+
+            <!-- CALENDAR -->
+
+            <button class="menu-card calendar-card" onclick="openPage('calendar')">
+
+                <div class="icon blue">
+                    📅
+                </div>
+
+                <div class="card-text">
+                    <span>Calendar</span>
+                </div>
+
+            </button>
+
+
+            <!-- WORDS -->
+
+            <button class="menu-card words-card" onclick="openPage('words')">
+
+                <div class="icon purple">
+                    <span>WORDS</span>
+                    <span>ONLY</span>
+                </div>
+
+                <div class="card-text">
+                    <span>words only</span>
+                    <span>we understand</span>
+                </div>
+
+            </button>
+
+
+            <!-- PLAYLIST -->
+
+            <button class="menu-card playlist-card" onclick="openPlaylist()">
+
+                <div class="icon green">
+                    🎵
+                </div>
+
+                <div class="card-text">
+                    <span>playlist with</span>
+                    <span>my favorite songs</span>
+                    <span>our audio</span>
+                </div>
+
+            </button>
+
+
+            <!-- LETTER -->
+
+            <button class="menu-card letter-card" onclick="openPage('letter')">
+
+                <div class="icon pink">
+                    💌
+                </div>
+
+                <div class="card-text">
+                    <span>read this when</span>
+                    <span>you miss me</span>
+                </div>
+
+            </button>
+
+
+            <!-- LETTER -->
+
+            <button class="menu-card letter-main-card" onclick="openPage('letter')">
+
+                <div class="icon blue">
+                    ✈
+                </div>
+
+                <div class="card-text">
+                    <span>letter</span>
+                </div>
+
+            </button>
+
+
+            <!-- PHOTO BOOK -->
+
+            <button class="menu-card photo-card" onclick="openPage('photos')">
+
+                <div class="icon yellow">
+                    🖼
+                </div>
+
+                <div class="card-text">
+                    <span>photo book</span>
+                </div>
+
+            </button>
+
+
+            <!-- THINGS -->
+
+            <button class="menu-card things-card" onclick="openPage('things')">
+
+                <div class="icon purple">
+                    ♡
+                </div>
+
+                <div class="card-text">
+                    <span>things that reminds</span>
+                    <span>me of you</span>
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+<!-- =========================
+     PLAYLIST
+========================== -->
+
+<section id="playlistPage" class="playlist-page">
+
+    <div class="playlist-player">
+
+        <button class="back-button" onclick="closePlaylist()">
+            ← Back
+        </button>
+
+        <div class="song-cover">
+            <img id="songCover" src="images/song1.jpg" alt="Song cover">
+        </div>
+
+        <div class="song-info">
+            <h1 id="songTitle">Hum Tum Ek Kamre Mein Band Ho</h1>
+            <p id="songArtist">Our memories</p>
+        </div>
+
+        <div class="progress-container">
+            <span id="currentTime">0:00</span>
+
+            <input
+                type="range"
+                id="progressBar"
+                value="0"
+                min="0"
+                max="100"
+            >
+
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="player-buttons">
+
+            <button onclick="previousSong()" class="control-button">
+                ⏮
+            </button>
+
+            <button onclick="togglePlay()" class="play-button" id="playButton">
+                ▶
+            </button>
+
+            <button onclick="nextSong()" class="control-button">
+                ⏭
+            </button>
+
+            <button onclick="toggleRepeat()" class="repeat-button" id="repeatButton">
+                🔁
+            </button>
+
+        </div>
+
+        <div class="song-list" id="songList"></div>
+
+    </div>
+
+</section>
+
+<audio id="audioPlayer"></audio>
+    <script src="script.js"></script>
+
+</body>
+</html>
